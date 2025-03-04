@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <h1 align="center">Cafe Coffee World</h1>
+    <nav>
+        <ul>
+            <li><a href="">home</a></li>
+            <li><a href="">about</a></li>
+            <li><a href="">contact</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <center>
+    <h1 align="center">Our Philosophy</h1>
+    <p> At<b> Cafe Coffee World</b> Let our café be your new favorite spot, where great conversations and even better flavors come together in every visit.</p>
+    <p>Step into a cozy atmosphere, sip on expertly brewed beverages, and treat yourself to mouthwatering pastries  the perfect place to relax and recharge</p>
+    </center>
+        <hr>
+    </header>
+        <center>
+            <h1><b>Our Special Cappuccino</b></h1>
+            <img src="https://images.pexels.com/photos/434213/pexels-photo-434213.jpeg?cs=srgb&dl=aroma-aromatic-art-434213.jpg&fm=jpg" style="width:300px;height:200px">
+            <h3>Classy Cappuccino</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae numquam libero, delectus magni nemo labore.</p>
+            <b>Price:$300</b>
+            <b>Special offer:</b><mark> Buy 1 Get 1 free on Weekends!</mark>
+            <hr>
+            <details>
+            <summary> What is Special About CCW?</summary><abbr Title="Cafe Coffee World">CCW?></abbr>
+            </details>
+            <hr>
+            <h1>Our Menu</h1>
+            <table border="1px">
+                <title>Our Coffee List</title>
+            <tr>
+                <th>Coffee</th>
+                <th>Qty</th>
+                <th> Price</th>
+            </tr>
+                <td rowspan="3" align="center" style="font-weight:bold;">Cappuccino</td>
+                <td>1</td>
+                <td>$150</td>
+            <tr>
+                <td>2</td>
+                <td>$250</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>$350</td>
+            </tr>
+            <tr>
+            <td rowspan="6" align="center" style="font-weight:bold;">Latte</td>
+                <td>1</td>
+                <td>$360</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>$240</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>$450</td>
+            </tr>
+            <tr>
+                <td colspan="3" allign="center style="font-weight:bold;">Biscuits$50</td>
+            </tr>
+            </table>
+            <form>
+                <h1>Feedback Form</h1>
+                Name:<input type="text" placeholder="Enter your name"><br>
+                Email:<input type="Email" placeholder="Enter your Email"><br>
+                Comment:<input type="text" placeholder="Enter your Email"><br><br>
+                <input type="Submit">
+            </form>
+            
+
+
+            <footer>
+                @2025 copyrights
+            </footer>
+        </center>
+</body>
+</html>
