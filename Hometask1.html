@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+<style>
+  body{
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <h2>Calculator</h2>
+  <label>First Number:</label>
+  <input type="number" id="num1"><br><br>
+  <label>Second Number:</label>
+  <input type="number" id="num2"><br><br>
+  <label>Choose Operation:</label>
+  <select id="operator">
+    <option value="+">Add (+)</option>
+    <option value="-">Subtract (-)</option>
+    <option value="*">Multiply (*)</option>
+    <option value="/">Divide (/)</option>
+  </select><br><br>
+
+  <button onclick="calculate()">Calculate</button>
+
+  <p id="result">Result will show here</p>
+
+  <script>
+    function calculate() {
+      let n1 = document.getElementById("num1").value;
+      let n2 = document.getElementById("num2").value;
+      let op = document.getElementById("operator").value;
+
+      // convert inputs to numbers
+      n1 = parseFloat(n1);
+      n2 = parseFloat(n2);
+
+      let res;
+
+      if (isNaN(n1) || isNaN(n2)) {
+        res = "Please enter valid numbers!";
+      } else {
+        if (op === "+") {
+          res = n1 + n2;
+        } else if (op === "-") {
+          res = n1 - n2;
+        } else if (op === "*") {
+          res = n1 * n2;
+        } else if (op === "/") {
+          if (n2 === 0) {
+            res = "Cannot divide by zero!";
+          } else {
+            res = n1 / n2;
+          }
+        } else {
+          res = "Invalid operator.";
+        }
+      }
+
+      document.getElementById("result").innerText = "Result: " + res;
+    }
+  </script>
+
+</body>
+</html>
