@@ -1,0 +1,24 @@
+// 1. Reverse each word in a sentence
+function reverseWordsInSentence(sentence) {
+  return sentence
+    .split(' ')
+    .map(word => word.split('').reverse().join(''))
+    .join(' ');
+}
+const sentence= "kg college of arts and science";
+console.log("Reversed words:",reverseWordsInSentence(sentence));
+
+// 2. Remove duplicates from an array
+function removeDuplicates(array) {
+  return [...new Set(array)];
+}
+const array =[1,2,3,2,4,3,5];
+console.log(" Array without duplicates:",removeDuplicates(array));
+
+// 3. Count vowels in a string
+function countVowels(string) {
+  const vowels = 'aeiouAEIOU';
+  return [...str].filter(char => vowels.includes(char)).length;
+}
+const string=" javaScript is good";
+console.log( "vowel count:",countVowels(string));
