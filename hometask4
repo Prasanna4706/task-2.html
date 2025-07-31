@@ -16,7 +16,7 @@ const array =[1,2,3,2,4,3,5];
 console.log(" Array without duplicates:",removeDuplicates(array));
 
 // 3. Count vowels in a string
-function countVowels(string) {
+function countVowels(str) {
   const vowels = 'aeiouAEIOU';
   return [...str].filter(char => vowels.includes(char)).length;
 }
