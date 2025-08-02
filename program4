@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Employee management</title>
+</head>
+<body>
+  <script>
+    let employee = [];
+    function addEmp(id, name, role, salary) {
+      employee.push({ id, name, role, salary });
+      console.log("Added:", { id, name, role, salary });
+    }
+    addEmp(1, "Akash", "developer", 10000);
+    addEmp(2, "Prasanna", "CEO", 20000);
+    console.log("All employees:", employee);
+    function calculateSal() {
+      let total = employee.reduce((sum, emp) => sum + emp.salary, 0);
+      console.log("Total salary:", total);
+      return total;
+    }
+    calculateSal();
+    function updateEmp(id, newDetail) {
+      let emp = employee.find((e) => e.id === id);
+      if (emp) {
+        Object.assign(emp, newDetail);
+        console.log("Updated employees:", employee);
+      } else {
+        console.log("Employee not found!");
+      }
+    }
+    updateEmp(1, { name: "sam" });
+    function removeEmp(index){
+    if(index >= 0 && index < employee.length){
+        employee.splice(index, 1);
+        console.log("deleted", employee);
+    } else {
+        console.log("emp not found");
+    }
+}
+removeEmp(0 )
+function searchEmp() {
+      let input = prompt("Enter the employee name?");
+      if (!input) {
+        console.log("Please enter a valid name.");
+        return;
+      }
+
+      let result = employee.filter(e =>
+        e.name.toLowerCase().includes(input.toLowerCase())
+      );
+
+      if (result.length > 0) {
+        console.log("Search Results:", result);
+      } else {
+        console.log("No matching employees found.");
+      }
+    }
+
+  
+
+    addEmp(1, "vijay", 40000, "Software Developer");
+    addEmp(2, "Sam", 50000, "CEO");
+    console.log("All Employees:", employee);
+
+    calculateSal();
+
+    updateEmp(1, { name: "Akash " });
+
+    removeEmp(0); 
+
+    searchEmp(); 
+
+
+
+
+        
+  </script>
+</body>
+</html>
