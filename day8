@@ -1,0 +1,33 @@
+let current=new Date("2006-07-04");
+let day=current.getDay();
+console.log(current)
+console.log(current.toString());
+console.log(day);
+
+class sample{
+    constructor(personmame){
+        this.personmame=personmame;
+        console.log(personmame)
+    }
+}
+let result=new sample("Prasanna")
+
+class bank{
+    constructor(initalamount=0){
+        this._balance=initalamount;
+    }
+    get balance(){
+        return this._balance;
+    }
+    set balance(amount){
+        if(amount>0){
+            this._balance+=amount;
+            console.log(amount);
+        }
+    }
+}
+let b=new bank(10);
+console.log(b)
+b.balance=100;
+console.log(b)
+
