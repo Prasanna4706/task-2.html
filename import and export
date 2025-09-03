@@ -1,0 +1,6 @@
+// Import and Export modulrs
+// definition:
+// Export allows you to make variables,function ,or 
+// classes available to other files
+// Import allows you to bring those into another file
+// used in modular javascript (ES6+)
