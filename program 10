@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // definition
+        // quntifies specifies how many times a character or group can occur
+        let text = "aaaba";
+        let pattern=/\a?/g;
+        let result=text.match(pattern);
+        console.log(result);
+        // * matches with 0 or more times consecutive as it allows empty matches
+        // too atlast it checks once again so if not it returns("")
+        // + unlike ? this does not allow empty matches instead of matching
+        // one a at time it groups consecutive as together.
+        // ? matches 0 or 1 at each position atleast it checks once again so if not it returns("")
+        // modifiers changes how regex matches
+        // common modofiers
+        //g-> global
+        //i-> case insensitive
+        //m-> multiline 
+
+        let sentences="javaScript programming language.\njava programming language.";
+        let pattern2=/\programming+/igm;
+        let result2=sentences.match(pattern2);
+        console.log(result2);
+        // metacharacters have special meaning in regex
+        // common metacharacters:
+        // \d matches any digit character [0-9]
+        // \D matches any non-digit character [^0-9]
+        // \w matches any word character [a-zA-Z0-9_]
+        // \s-matches any whitespace character [ \t\n\r\f\v]
+        // ^ matches the beginning of a string or line
+        // $ matches the end of a string or line
+
+        let digitchar="001js";
+        let pattern3=/\d+/g; // \d matches any digit character [0-9]
+        let result3=digitchar.match(pattern3);
+        console.log(result3);
+        //grouping
+        // definition
+        // parentheses () are used to group patterns and capture submatches
+        let texts="Hai Prasanna";
+        let pattern4=/(\w+)\s(\w+)/; // \w matches any word character [a-zA-Z0-9_]
+        let result4=texts.match(pattern4);
+        console.log(result4);
+         console.log(result4[0]); // full match
+         console.log(result4[1]); // first group match     
+            console.log(result4[2]); // second group match
+            let fruits="apple,banana,orange";
+            // 1.exec()-group the ouptput
+            let pattern5=/(apple)/;
+            let result5=pattern5.exec(fruits);
+            console.log(result5[0]);
+            console.log(result5[1]);
+            // 2.replace()-replace the matched pattern
+            let pattern6=/apple/g;
+            let result6=fruits.replace(pattern6,"orange");
+            console.log(result6);
+            // 3.split()-split the string at each match
+            let pattern7=/\s+/;// split at each whitespace
+            let result7=fruits.split(pattern7);
+            console.log(result7);
+
+
+    </script>
+</body>
+</html>
