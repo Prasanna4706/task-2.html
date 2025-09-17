@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validtion </title>
+</head>
+<body>
+  <h2 >Registration Form</h2>
+
+
+    <form id="myForm">
+    <input type="text" id="nmae" placeholder="Enter the name"><br><br>
+    <input type="email id" id="email id " placeholder="Enter the email id "><br><br>
+    <input type="text" id="Phone" placeholder="Enter the phone number"><br><br>
+    <input type="password" id="password" placeholder="Enter the password"><br><br>
+
+    <button type="submit">Submit</button>
+  
+    </form>
+  
+
+  <script>
+    const form = document.getElementById("myForm");
+
+  
+    const namePattern = /^[A-Za-z\s]{3,30}$/; // only letters & spaces, 3–30 chars
+    const emailPattern = /^[\w.-]+@[\w-]+\.[A-Za-z]{2,}$/; // simple email
+    const phonePattern = /^\(\d{3}\)\s\d{3}-\d{4}$/; // (123) 456-7890
+    const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  
+
+    
+    document.getElementById("phone").addEventListener("input", function(e) {
+      let digits = e.target.value.replace(/\D/g, ""); // remove non-digits
+      if (digits.length > 10) digits = digits.slice(0,10); // limit to 10 digits
+      let formatted = digits
+        .replace(/(\d{3})(\d{3})(\d{0,4})/, "($1) $2-$3")
+        .replace(/-$/, ""); // avoid trailing dash
+      e.target.value = formatted;
+    });
+
+    
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let valid = true;
+
+
+      if (namePattern.test(name.value)) {
+        nameMsg.textContent = "Valid name ";
+        nameMsg.className = "success";
+      } else {
+        nameMsg.textContent = "Name must be 3–30 letters only.";
+        nameMsg.className = "error";
+        valid = false;
+      }
+
+      
+      if (emailPattern.test(email.value)) {
+        emailMsg.textContent = "Valid email ";
+        emailMsg.className = "success";
+      } else {
+        emailMsg.textContent = "Enter a valid email.";
+        emailMsg.className = "error";
+        valid = false;
+      }
+
+      
+      if (phonePattern.test(phone.value)) {
+        phoneMsg.textContent = "Valid phone ";
+        phoneMsg.className = "success";
+      } else {
+        phoneMsg.textContent = "Format: (123) 456-7890";
+        phoneMsg.className = "error";
+        valid = false;
+      }
+
+      
+      if (passwordPattern.test(password.value)) {
+        passwordMsg.textContent = "Strong password";
+        passwordMsg.className = "success";
+      } else {
+        passwordMsg.textContent = "Password must have 8+ chars, 1 uppercase, 1 lowercase, 1 number, 1 special.";
+        passwordMsg.className = "error";
+        valid = false;
+      }
+
+      if (valid) {
+        alert("Form submitted successfully!");
+      }
+    });
+  </script>
+</body>
+</html>
+  
+</body>
+</html>
